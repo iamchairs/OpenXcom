@@ -84,7 +84,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\deps\include;$(ProjectDir)..\deps\include\SDL;$(ProjectDir)..\deps\include\yaml-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\deps\include;$(ProjectDir)..\deps\include\SDL;$(ProjectDir)..\deps\include\yaml-cpp;$(ProjectDir)..\deps\include\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_CONSOLE;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -98,7 +98,7 @@
       </ForcedIncludeFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>yaml-cppd.lib;SDL_image.lib;SDL_mixer.lib;SDL_gfx.lib;SDLmain.lib;SDL.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>lua53.lib;yaml-cppd.lib;SDL_image.lib;SDL_mixer.lib;SDL_gfx.lib;SDLmain.lib;SDL.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\deps\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
@@ -120,7 +120,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\deps\include;$(ProjectDir)..\deps\include\SDL;$(ProjectDir)..\deps\include\yaml-cpp%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\deps\include;$(ProjectDir)..\deps\include\SDL;$(ProjectDir)..\deps\include\yaml-cpp;$(ProjectDir)..\deps\include\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_CONSOLE;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -133,7 +133,7 @@
       </ForcedIncludeFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>yaml-cppd.lib;SDL_image.lib;SDL_mixer.lib;SDL_gfx.lib;SDLmain.lib;SDL.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>lua53.lib;yaml-cppd.lib;SDL_image.lib;SDL_mixer.lib;SDL_gfx.lib;SDLmain.lib;SDL.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\deps\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
@@ -152,7 +152,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\deps\include;$(ProjectDir)..\deps\include\SDL;$(ProjectDir)..\deps\include\yaml-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\deps\include;$(ProjectDir)..\deps\include\SDL;$(ProjectDir)..\deps\include\yaml-cpp;$(ProjectDir)..\deps\include\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -167,7 +167,7 @@
       </ForcedIncludeFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>yaml-cpp.lib;SDL_image.lib;SDL_mixer.lib;SDL_gfx.lib;SDLmain.lib;SDL.lib;SDL_gfx.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>lua53.lib;yaml-cpp.lib;SDL_image.lib;SDL_mixer.lib;SDL_gfx.lib;SDLmain.lib;SDL.lib;SDL_gfx.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\deps\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -188,7 +188,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\deps\include;$(ProjectDir)..\deps\include\SDL;$(ProjectDir)..\deps\include\yaml-cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\deps\include;$(ProjectDir)..\deps\include\SDL;$(ProjectDir)..\deps\include\yaml-cpp;$(ProjectDir)..\deps\include\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -203,7 +203,7 @@
       </ForcedIncludeFiles>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>yaml-cpp.lib;SDL_image.lib;SDL_mixer.lib;SDL_gfx.lib;SDLmain.lib;SDL.lib;SDL_gfx.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>lua53.lib;yaml-cpp.lib;SDL_image.lib;SDL_mixer.lib;SDL_gfx.lib;SDLmain.lib;SDL.lib;SDL_gfx.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\deps\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -437,6 +437,7 @@
     <ClCompile Include="Menu\StatisticsState.cpp" />
     <ClCompile Include="Menu\TestState.cpp" />
     <ClCompile Include="Menu\VideoState.cpp" />
+    <ClCompile Include="Mod\LuaScript.cpp" />
     <ClCompile Include="Mod\RuleCommendations.cpp" />
     <ClCompile Include="Mod\RuleConverter.cpp" />
     <ClCompile Include="pch.cpp">
@@ -769,6 +770,7 @@
     <ClInclude Include="Menu\StatisticsState.h" />
     <ClInclude Include="Menu\TestState.h" />
     <ClInclude Include="Menu\VideoState.h" />
+    <ClInclude Include="Mod\LuaScript.h" />
     <ClInclude Include="Mod\RuleCommendations.h" />
     <ClInclude Include="Mod\RuleConverter.h" />
     <ClInclude Include="pch.h" />

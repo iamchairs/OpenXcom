@@ -4,6 +4,7 @@
     <LocalDebuggerWorkingDirectory>$(ProjectDir)..\bin\$(Platform)\</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerCommandArguments>-data "$(ProjectDir)..\bin"</LocalDebuggerCommandArguments>
+    <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LocalDebuggerWorkingDirectory>$(ProjectDir)..\bin\$(Platform)\</LocalDebuggerWorkingDirectory>

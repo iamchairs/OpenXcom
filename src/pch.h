@@ -117,7 +117,7 @@
 #include <SDL_thread.h>
 #include <SDL_types.h>
 #include <SDL_video.h>
-#include <yaml-cpp/yaml.h>
+#include <lua/lua.hpp>
 #include "./dirent.h"
 #include "./lodepng.h"
 

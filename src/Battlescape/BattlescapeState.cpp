@@ -484,6 +484,8 @@ BattlescapeState::~BattlescapeState()
 	delete _animTimer;
 	delete _gameTimer;
 	delete _battleGame;
+
+	_game->getMod()->scriptCall("onBeforeBattlescapeExit");
 }
 
 /**
@@ -553,6 +555,8 @@ void BattlescapeState::init()
 			_game->pushState(new SaveGameState(OPT_BATTLESCAPE, SAVE_AUTO_BATTLESCAPE, _palette));
 		}
 	}
+
+	_game->getMod()->scriptCall("onBattlescapeEnter");
 }
 
 /**

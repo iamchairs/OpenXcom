@@ -26,6 +26,7 @@
 #include "../Savegame/GameTime.h"
 #include "Unit.h"
 #include "RuleAlienMission.h"
+#include "LuaScript.h"
 
 namespace OpenXcom
 {
@@ -63,6 +64,7 @@ class AlienRace;
 class AlienDeployment;
 class UfoTrajectory;
 class RuleAlienMission;
+class LuaScript;
 class Base;
 class MCDPatch;
 class ExtraSprites;
@@ -132,6 +134,7 @@ private:
 	std::map<std::string, ExtraStrings *> _extraStrings;
 	std::vector<StatString*> _statStrings;
 	std::map<std::string, RuleMusic *> _musicDefs;
+	std::map<std::string, LuaScript *> _luaScripts;
 	RuleGlobe *_globe;
 	RuleConverter *_converter;
 	int _costEngineer, _costScientist, _timePersonnel, _initialFunding, _turnAIUseGrenade, _turnAIUseBlaster, _defeatScore, _defeatFunds;
@@ -144,7 +147,7 @@ private:
 	std::map<std::string, int> _ufopaediaSections;
 	std::vector<std::string> _countriesIndex, _regionsIndex, _facilitiesIndex, _craftsIndex, _craftWeaponsIndex, _itemsIndex, _invsIndex, _ufosIndex;
 	std::vector<std::string> _soldiersIndex, _aliensIndex, _deploymentsIndex, _armorsIndex, _ufopaediaIndex, _ufopaediaCatIndex, _researchIndex, _manufactureIndex;
-	std::vector<std::string> _alienMissionsIndex, _terrainIndex, _missionScriptIndex;
+	std::vector<std::string> _alienMissionsIndex, _terrainIndex, _missionScriptIndex, _luaScriptsIndex;
 	std::vector<std::vector<int> > _alienItemLevels;
 	std::vector<SDL_Color> _transparencies;
 	int _facilityListOrder, _craftListOrder, _itemListOrder, _researchListOrder,  _manufactureListOrder, _ufopaediaListOrder, _invListOrder;
@@ -406,6 +409,7 @@ public:
 	StatAdjustment *getStatAdjustment(int difficulty);
 	int getDefeatScore() const;
 	int getDefeatFunds() const;
+	void scriptCall(std::string fn);
 };
 
 }

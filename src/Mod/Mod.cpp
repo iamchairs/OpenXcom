@@ -67,6 +67,7 @@
 #include "ExtraStrings.h"
 #include "RuleInterface.h"
 #include "RuleMissionScript.h"
+#include "LuaScript.h"
 #include "../Geoscape/Globe.h"
 #include "../Savegame/SavedGame.h"
 #include "../Savegame/Region.h"
@@ -1329,6 +1330,16 @@ void Mod::loadFile(const std::string &filename)
 	{
 		_statAdjustment[count].aimAndArmorMultiplier = (*i).as<double>(_statAdjustment[count].aimAndArmorMultiplier);
 		++count;
+	}
+	for (YAML::const_iterator i = doc["scripts"].begin(); i != doc["scripts"].end(); ++i)
+	{
+		// T *Mod::loadRule(const YAML::Node &node, std::map<std::string, T*> *map, std::vector<std::string> *index, const std::string &key) const
+		LuaScript *rule = loadRule(*i, &_luaScripts, &_luaScriptsIndex, "file");
+		if (rule != 0)
+		{
+			rule->load(filename, *i);
+			rule->start();
+		}
 	}
 	if (doc["statGrowthMultipliers"])
 	{
@@ -3409,6 +3420,14 @@ int Mod::getDefeatScore() const
 int Mod::getDefeatFunds() const
 {
 	return _defeatFunds;
+}
+
+void Mod::scriptCall(std::string fn)
+{
+	for(int i = 0; i < _luaScriptsIndex.size(); i++) {
+		LuaScript *luaScript = _luaScripts.at(_luaScriptsIndex.at(i));
+		luaScript->call(fn);
+	}
 }
 
 }

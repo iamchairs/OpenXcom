@@ -406,6 +406,8 @@ GeoscapeState::~GeoscapeState()
 		delete *it;
 		it = _dogfightsToBeStarted.erase(it);
 	}
+
+	_game->getMod()->scriptCall("onBeforeGeoscapeExit");
 }
 
 /**
@@ -542,6 +544,8 @@ void GeoscapeState::init()
 		determineAlienMissions();
 		_game->getSavedGame()->setFunds(_game->getSavedGame()->getFunds() - (_game->getSavedGame()->getBaseMaintenance() - _game->getSavedGame()->getBases()->front()->getPersonnelMaintenance()));
 	}
+
+	_game->getMod()->scriptCall("onGeoscapeEnter");
 }
 
 /**
